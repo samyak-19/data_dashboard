@@ -1,0 +1,160 @@
+/* General Item Card Styles */
+.item-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  margin: 20px;
+  transition: all 0.4s ease-in-out;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  border: 1px solid rgba(0, 0, 255, 0.214);
+}
+
+.item-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #6a7dff, #5d5fd1);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-15px); /* Lift the card higher */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); /* Deeper shadow for hover */
+}
+
+.item-card:hover::before {
+  transform: scaleX(1); /* Expand the gradient under the card */
+}
+
+.item-card h3 {
+  font-size: 1.6rem;
+  color: #333;
+  margin: 15px 0;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.item-card:hover h3 {
+  color: #5d5fd1; /* Change color on hover for emphasis */
+}
+
+.item-card .engagement-score,
+.item-card .reach {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.item-card .category,
+.item-card .location {
+  font-size: 1.1rem;
+  color: #999;
+  margin: 5px 0;
+}
+
+.item-card button {
+  background: linear-gradient(45deg, #130272e3, #061afb);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  margin-top: 20px;
+}
+
+.item-card button:hover {
+  background: linear-gradient(45deg, #2c36ed, #2fafb5); /* Gradient effect on hover */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px); /* Slight lift on hover */
+}
+
+.item-card button:focus {
+  outline: none;
+}
+
+.item-card button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.item-card button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.item-card button:active {
+  transform: translateY(0px);
+  background-color: #3cfcef;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design for Item Cards */
+@media (max-width: 1200px) {
+  .item-card {
+    padding: 20px;
+  }
+
+  .item-card h3 {
+    font-size: 1.4rem;
+  }
+
+  .item-card button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .item-card {
+    padding: 18px;
+    margin: 15px;
+  }
+
+  .item-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .item-card button {
+    font-size: 0.95rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item-card {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .item-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .item-card button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}

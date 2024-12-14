@@ -1,0 +1,90 @@
+/* Container for the filters and sorting controls */
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:white; 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Responsive layout for smaller devices */
+  @media (max-width: 768px) {
+    .controls {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 15px;
+    }
+  }
+  
+  /* Category select dropdown */
+  .controls select {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #ffffff; /* White background for dropdown */
+    color: #333;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .controls select:focus {
+    border-color:   #eceef1;
+    /* box-shadow: 0 2px 6px rgba(17, 19, 21, 0.5); */
+  }
+  
+  /* Hover effect for dropdown */
+  .controls select:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Sort select dropdown */
+  .controls select.sort {
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  .controls select.sort:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+  }
+  
+  /* Labels for the selects */
+  .controls label {
+    font-weight: bold;
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Animation for when the controls are displayed */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .controls {
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Style for larger screens */
+  @media (max-width: 1200px) {
+    .controls {
+      max-width: 80%;
+      padding: 15px;
+    }
+  }
+  

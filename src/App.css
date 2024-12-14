@@ -1,0 +1,135 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7; /* Light gray background for clean, modern look */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: linear-gradient(135deg, #6a7dff, #5d5fd1); /* Subtle gradient for a professional feel */
+  background-size: 300% 300%;
+  color: white;
+  padding: 50px 10%;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: gradientAnimation 8s ease infinite;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* Header pulse effect */
+header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  animation: pulseEffect 4s infinite ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Keyframe animations */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulseEffect {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0.3;
+  }
+}
+
+/* Main App Styling */
+.App {
+  padding: 30px 10%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: white; /* Clean background for the content area */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .App {
+    padding: 20px 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    font-size: 1.8rem;
+    padding: 25px 5%;
+  }
+
+  .item-card h3 {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .item-card button {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1.4rem;
+    padding: 20px;
+  }
+
+  .item-card h3 {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .item-card button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
+/* Item Card Styling */
+
